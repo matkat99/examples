@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+      }
+      body {
+        font-family: sans-serif;
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      li,
+      p,
+      figcaption {
+        max-width: 66ch;
+        line-height: 1.5;
+        margin: auto;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+      }
+      figure {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        place-items: center;
+      }
+      @media screen and (min-width: 700px) {
+        figure {
+          flex-direction: row;
+        }
+        .left {
+          flex-direction: row-reverse;
+        }
+      }
+      figure img {
+        --rotate-amount: -4deg;
+        max-width: 400px;
+        border: 6px solid white;
+        box-shadow: 5px 5px 5px #555;
+        transform: rotate(var(--rotate-amount));
+      }
+      .hero {
+        margin: 0;
+        padding: 0;
+      }
+      .hero img {
+        width: 100%;
+      }
+      section {
+        width: clamp(360px, 80%, 960px);
+        margin: auto;
+        margin-bottom: 15em;
+      }
+
+      .sliding-image {
+        --direction: slide-right;
+        view-timeline-name: --revealing-image;
+        view-timeline-axis: block;
+        animation: linear var(--direction) both;
+        animation-timeline: --revealing-image;
+        animation-range: entry 25% cover 50%;
+      }
+      .left {
+        --direction: slide-left;
+      }
+      .left img {
+        --rotate-amount: 4deg;
+      }
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          clip-path: inset(45% 20% 45% 20%);
+        }
+        to {
+          opacity: 1;
+          clip-path: inset(0% 0% 0% 0%);
+        }
+      }
+      @keyframes slide-left {
+        from {
+          opacity: 0;
+          transform: translateX(-300px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slide-right {
+        from {
+          opacity: 0;
+          transform: translateX(300px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <img src="images/buffalo.jpeg" alt="Buffalo river in winter" />
+      </div>
+      <section class="section1">
+        <h1>Bro Thompson</h1>
+        <h2>Who Am I?</h2>
+        <p>
+          I am currently a professor at BYU-Idaho teaching courses in Web Design
+          and Development. I have been in this role for about 12 years now.
+          Before that I spent time as a systems administrator for Provo School
+          district, and before that a High School teacher.
+        </p>
+        <p>Teaching seems to be in my blood. 😁</p>
+        <p>
+          I live in Rexburg, and was in fact raised here. Because of this I was
+          excited for the opportunity to move back and raise my three sons here.
+        </p>
+        <p>
+          I have spent about 20 of the last 25 years with a calling in the young
+          mens organization. I still love it.
+        </p>
+        <p>
+          I have always thought that pictures are a much better way to introduce
+          something than words...and so the rest of my introduction to my
+          interests will come through images.
+        </p>
+        <figure class="sliding-image">
+          <img src="images/me.jpeg" alt="Me" />
+          <figcaption>
+            Bro Thompson with his family, trying to figure out how to take a
+            selfie. Is it still a "selfie" when it is a group?
+          </figcaption>
+        </figure>
+        <figure class="sliding-image left">
+          <img src="images/bread.jpeg" alt="Sourdough bread" />
+          <figcaption>
+            When we moved to Rexburg I told my wife: "Would it be ok if I
+            started baking bread?" She said yes. (Actually she said "Is this a
+            trick question?") This is one of my Sourdough loaves 😍
+          </figcaption>
+        </figure>
+        <figure class="sliding-image">
+          <img src="images/pear-cake.jpeg" alt="Pear cake" />
+          <figcaption>
+            Truly delicious Pear Cake. One of the best ways I have discovered to
+            use up that glut of pears that ripen all at the same time in the
+            fall.
+          </figcaption>
+        </figure>
+        <figure class="sliding-image left">
+          <img src="images/tomato.jpeg" alt="Tomatoes" />
+          <figcaption>
+            I also love to garden. Fresh tomatoes are one of the things I get
+            excited about every year.
+          </figcaption>
+        </figure>
+        <figure class="sliding-image">
+          <img
+            src="images/grand-canyon-yellowstone.jpeg"
+            alt="Grand Canyon of the Yellowstone"
+          />
+          <figcaption>
+            My family and I love Yellowstone National Park. We try to go several
+            times a year because it is so close. This is the Grand Canyon of the
+            Yellowstone.
+          </figcaption>
+        </figure>
+        <figure class="sliding-image left">
+          <img src="images/mud-pot.jpeg" alt="Mud pot in Yellowstone" />
+          <figcaption>
+            Here is a picture of a mud pot we found on a hike in Yellowstone.
+          </figcaption>
+        </figure>
+        <figure class="sliding-image">
+          <img src="images/skiing-into-cabin.jpeg" alt="Winter skiing" />
+          <figcaption>
+            As any good Rexburg native will tell you, one has to embrace winter
+            when living here. This is my family and I getting ready to ski into
+            a cabin for Christmas!
+          </figcaption>
+        </figure>
+      </section>
+    </div>
+  </body>
+</html>

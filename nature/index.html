@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature</title>
+    <script src="main.js" type="module"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      img {
+        max-width: 100%;
+      }
+      main {
+        display: flex;
+        /* height: 250vh; */
+      }
+      .details {
+        flex: 1 0 auto;
+      }
+      .details ul {
+        list-style-type: none;
+        padding-left: 0;
+        columns: 300px;
+
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .details li {
+        width: 300px;
+        /* -webkit-column-break-inside: avoid; */
+        /* page-break-inside: avoid; */
+        break-inside: avoid;
+        border: 1px solid;
+        padding: 1em;
+        margin-bottom: 20px;
+      }
+      .place ul {
+        list-style: none;
+        cursor: pointer;
+      }
+      .place li:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Species search</h1></header>
+    <main>
+      <section class="place">
+        <label for="place">Place</label>
+        <input id="place" /><button id="placeSearch">Search</button>
+        <ul id="placeList"></ul>
+      </section>
+      <section class="details">
+        <ul id="details"></ul>
+      </section>
+    </main>
+  </body>
+</html>
