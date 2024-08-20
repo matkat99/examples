@@ -6,11 +6,17 @@
   import { checkLogin } from "./lib/auth.mjs";
   import { onMount } from "svelte";
 
+  let urlParams;
+
   window.addEventListener("popstate", () => {
-    if (window.location.hash === "#profile" && !$userStore.isLoggedIn) {
+    // see if there were any query params sent.
+    const [hash, params] = window.location.hash.split("?");
+    // if so lets turn them into a URLSearchParams object so we can use params.get(param)
+    if (params) urlParams = new URLSearchParams("?" + params);
+    if (hash === "#profile" && !$userStore.isLoggedIn) {
       window.location.hash = "#login";
     } else {
-      $route = window.location.hash;
+      $route = hash;
     }
   });
   async function init() {
