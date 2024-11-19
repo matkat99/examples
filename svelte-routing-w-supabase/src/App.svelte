@@ -2,6 +2,7 @@
   import Login from "./lib/Login.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import UserProfile from "./lib/UserProfile.svelte";
+  import Post from "./lib/Post.svelte";
   import { route, userStore } from "./lib/stores.mjs";
   import { checkLogin } from "./lib/auth.mjs";
   import { onMount } from "svelte";
@@ -33,6 +34,14 @@
   <div class="card">
     {#if $route === "#login"}
       <Login />
+    {:else if $route == "#posts"}
+      <h2>Posts</h2>
+      <ul>
+        <li><a href="#post?post_id=1">Post One</a></li>
+        <li><a href="#post?post_id=2">Post Two</a></li>
+      </ul>
+    {:else if $route == "#post"}
+      <Post {urlParams} />
     {:else if $route === "#profile"}
       <UserProfile />
     {:else}
