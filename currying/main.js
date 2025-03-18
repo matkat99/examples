@@ -9,6 +9,8 @@ function dieRoller(num) {
 }
 
 var d4 = dieRoller(4);
+let d6 = dieRoller(6);
+let d8 = dieRoller(8);
 console.log("A roll of the D4: " + d4()); // 1 - 4
 console.log("Another roll of the D4: " + d4()); //  1 - 4
 

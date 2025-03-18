@@ -3,25 +3,28 @@
   import Navbar from "./lib/Navbar.svelte";
   import UserProfile from "./lib/UserProfile.svelte";
   import Post from "./lib/Post.svelte";
-  import { route, userStore } from "./lib/stores.mjs";
+  import PostList from "./lib/PostList.svelte";
+  import { route, userStore } from "./lib/stores.svelte.js";
   import { checkLogin } from "./lib/auth.mjs";
   import { onMount } from "svelte";
 
-  let urlParams;
+  let urlParams = $state();
 
-  window.addEventListener("popstate", () => {
+  const setRoute = () => {
     // see if there were any query params sent.
     const [hash, params] = window.location.hash.split("?");
     // if so lets turn them into a URLSearchParams object so we can use params.get(param)
     if (params) urlParams = new URLSearchParams("?" + params);
-    if (hash === "#profile" && !$userStore.isLoggedIn) {
+    if (hash === "#profile" && !userStore.isLoggedIn) {
       window.location.hash = "#login";
     } else {
-      $route = hash;
+      route.pathname = hash;
     }
-  });
+  };
+  window.addEventListener("popstate", setRoute);
   async function init() {
-    checkLogin();
+    await checkLogin();
+    setRoute();
   }
 
   onMount(init);
@@ -32,20 +35,21 @@
   <h1>Sup demo</h1>
 
   <div class="card">
-    {#if $route === "#login"}
-      <Login />
-    {:else if $route == "#posts"}
+    {#if route.pathname == "#home" || route.pathname == ""}
+      <h2>Home</h2>
+      <p>This is the home page.</p>
+    {:else if route.pathname == "#posts"}
       <h2>Posts</h2>
-      <ul>
-        <li><a href="#post?post_id=1">Post One</a></li>
-        <li><a href="#post?post_id=2">Post Two</a></li>
-      </ul>
-    {:else if $route == "#post"}
-      <Post {urlParams} />
-    {:else if $route === "#profile"}
+      <PostList />
+    {:else if route.pathname == "#post"}
+      <Post params={urlParams} />
+    {:else if route.pathname == "#login"}
+      <Login />
+    {:else if route.pathname == "#profile"}
       <UserProfile />
     {:else}
-      <h2>Welcome Home</h2>
+      <h2>404</h2>
+      <p>Page not found.</p>
     {/if}
   </div>
 </main>

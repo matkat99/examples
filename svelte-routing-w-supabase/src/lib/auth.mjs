@@ -1,5 +1,5 @@
 import { supabase } from "./supabaseClient.mjs";
-import { userStore } from "./stores.mjs";
+import { userStore, route } from "./stores.svelte.js";
 
 export async function signUp(user) {
   let { data, error } = await supabase.auth.signUp({
@@ -16,11 +16,14 @@ export async function login(user) {
     password: user.password
   });
   if (data) {
-    userStore.set({ isLoggedIn: true, user: data.user });
+    userStore.isLoggedIn = true;
+    userStore.user = data.user;
   } else {
-    userStore.set({ isLoggedIn: false, user: null });
+    userStore.isLoggedIn = false;
+    userStore.user = null;
   }
   console.log(data, error);
+  route.pathname = "#posts";
 }
 
 export async function checkLogin() {
@@ -29,9 +32,11 @@ export async function checkLogin() {
     error
   } = await supabase.auth.getSession();
   if (session) {
-    userStore.set({ isLoggedIn: true, user: session?.user });
+    userStore.isLoggedIn = true;
+    userStore.user = session.user;
   } else {
-    userStore.set({ isLoggedIn: false, user: null });
+    userStore.isLoggedIn = false;
+    userStore.user = null;
   }
   console.log(session);
 }

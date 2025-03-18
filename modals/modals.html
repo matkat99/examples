@@ -17,17 +17,37 @@
       aria-hidden="true"
     >
       <section class="modal-content">
-        <span class="close-button" aria-label="Close modal">&times;</span>
+        <button class="close-button" aria-label="Close modal">&times;</button>
         <h2 id="modal-title">Modal Title</h2>
         <p id="modal-description">This is a simple modal example.</p>
         <input type="text" placeholder="Your feedback" />
         <button>Submit</button>
       </section>
     </div>
+    <dialog>
+      <button autofocus class="close-button">&times;</button>
+      Modal with dialog element
+    </dialog>
     <header><h1>Modal Exercise</h1></header>
     <main>
       <p>Some content here</p>
       <button id="open-modal">Click Me!</button>
+      <button id="open-dialog">Click Me! (dialog)</button>
     </main>
+    <section class="menu">
+      <button popovertarget="menu">Open menu</button>
+      <dialog id="menu" popover>
+        <!-- close button -->
+        <button class="action" popovertarget="menu">×</button>
+
+        <!-- navigation -->
+        <nav>
+          <a href="/">Home</a>
+          <a href="/docs/">Docs</a>
+          <a href="/blog/">Blog</a>
+          <a href="//github.com/nuejs/nue">GitHub</a>
+        </nav>
+      </dialog>
+    </section>
   </body>
 </html>
