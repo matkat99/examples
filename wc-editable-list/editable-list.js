@@ -22,7 +22,9 @@ align-items: center;}
 </style>
 <section>
     <slot name="title"></slot>
-    <slot></slot>
+    <ul>
+        <slot></slot>
+    </ul>
     <div class="add-item">
         <slot name="label"></slot>
         <input type="text" placeholder="Add a new List Item"></input>
