@@ -1,3 +1,4 @@
+//  unfinished example using LitElement
 import {
   LitElement,
   html,

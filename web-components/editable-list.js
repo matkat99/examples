@@ -40,10 +40,12 @@ class EditableList extends HTMLElement {
   connectedCallback() {
     console.log(this);
     const button = this.shadowRoot.querySelector(".add-button");
+    // wire up our event listener on the button
     button.addEventListener("click", this.addItem.bind(this));
   }
   addItem() {
     // Why can we get away with just targeting input? notice that we are not searching from `document`...we are searching from `this.shadowRoot`. We are in a bubble.
+    // Of course just because we can do something doesn't mean we necessarily should...
     const input = this.shadowRoot.querySelector("input");
     if (input.value) {
       const newItem = `<list-item>${input.value}</list-item>`;

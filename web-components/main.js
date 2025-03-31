@@ -2,6 +2,7 @@ import * as EditableList from "./editable-list.js";
 import WordCount from "./word-count.js";
 import ShoppingCart from "./shopping-cart.js";
 
+// basic example of a simple web component
 class NewElement extends HTMLElement {
   constructor() {
     super();

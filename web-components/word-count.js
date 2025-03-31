@@ -1,3 +1,5 @@
+// Based off an example from MDN https://mdn.github.io/web-components-examples/word-count-web-component/
+
 // Create a class for the element
 export default class WordCount extends HTMLElement {
   constructor() {
