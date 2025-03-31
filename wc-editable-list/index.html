@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head>
+    <meta charset="utf-8" />
+    <title>Editable List | Web Components</title>
+    <script src="editable-list.js" type="module"></script>
+    <style>
+      :root {
+        /* We can set variables here and they will apply inside the shadow DOM */
+        /* --hover-color: green; */
+        /* --add-icon: "+"; */
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        /* note that the font and color (inherited properties) go through to the custom elements */
+        font-family: sans-serif;
+        background-color: antiquewhite;
+      }
+      /* We can modify the custom element... */
+      editable-list {
+        /* does flex do what you would expect here? */
+        /* as far as the css is concerned there seems to be only one child...the shadow DOM container... */
+        display: flex;
+        /* but what if the javascript didn't load? break the javascript, then view. Then uncomment the next line and view again */
+        /* flex-direction: column; */
+        max-width: 360px;
+        margin: 0 auto;
+        /* We can set variables here to only apply to this element, just like above these will penetrate the shadow DOM */
+        /* --remove-icon: "×"; */
+      }
+      li {
+        /* but we cannot target the elements in the shadow DOM directly */
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <editable-list>
+      <h2 slot="title">Todo List</h2>
+      <list-item>First!</list-item>
+      <list-item>Second!</list-item>
+      <list-item>Third!</list-item>
+      <label slot="label">Add a new List Item</label>
+    </editable-list>
+  </body>
+</html>
