@@ -1,0 +1,239 @@
+[
+    {
+      "id": 1,
+      "text": "You're sitting at your desk, surrounded by textbooks and notes. What do you do first?",
+      "options": [
+        {
+          "text": "Start with the hardest assignment.",
+          "next_id": 2
+        },
+        {
+          "text": "Take a short break to clear your head.",
+          "next_id": 3
+        },
+        {
+          "text": "Start with the easiest assignment.",
+          "next_id": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "You dive into the hardest assignment, but you get stuck. What do you do?",
+      "options": [
+        {
+          "text": "Keep trying to figure it out on your own.",
+          "next_id": 5
+        },
+        {
+          "text": "Ask a friend for help.",
+          "next_id": 6
+        },
+        {
+          "text": "Give up on that assignment for now and start on something else.",
+          "next_id": 7
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "You return to your desk, feeling refreshed. Which assignment do you start with?",
+      "options": [
+        {
+          "text": "The hardest one.",
+          "next_id": 8
+        },
+        {
+          "text": "The easiest one.",
+          "next_id": 9
+        },
+        {
+          "text": "A medium-difficulty one.",
+          "next_id": 10
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "You quickly finish the easy assignment. Feeling motivated, you start on the next one. What happens?",
+      "options": [
+        {
+          "text": "You get stuck and lose motivation.",
+          "next_id": 11
+        },
+        {
+          "text": "You finish the next assignment with ease.",
+          "next_id": 12
+        },
+        {
+          "text": "You get distracted by social media.",
+          "next_id": 13
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "You struggle for hours, but eventually figure it out. Feeling accomplished, you move on to the next assignment. What happens?",
+      "options": [
+        {
+          "text": "You finish the rest of your homework quickly and efficiently.",
+          "next_id": 14
+        },
+        {
+          "text": "You get distracted and lose focus.",
+          "next_id": 15
+        },
+        {
+          "text": "You feel overwhelmed and give up.",
+          "next_id": 16
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Your friend explains the concept to you, and you understand it immediately. You finish the assignment and feel confident. What do you do next?",
+      "options": [
+        {
+          "text": "Start on the next assignment.",
+          "next_id": 17
+        },
+        {
+          "text": "Take a short break to reward yourself.",
+          "next_id": 18
+        },
+        {
+          "text": "Procrastinate and watch some TV.",
+          "next_id": 19
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "You come back to the hard assignment later, feeling more refreshed. You're able to finish it without too much trouble. What do you do next?",
+      "options": [
+        {
+          "text": "Start on the next assignment.",
+          "next_id": 20
+        },
+        {
+          "text": "Take a long break and reward yourself.",
+          "next_id": 21
+        },
+        {
+          "text": "Give up on the rest of your homework and go to bed.",
+          "next_id": 22
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "You tackle the hardest assignment first, feeling accomplished. You move on to the next one. What happens?",
+      "options": [
+        {
+          "text": "You finish the rest of your homework with ease.",
+          "next_id": 23
+        },
+        {
+          "text": "You get stuck on the next assignment and lose motivation.",
+          "next_id": 24
+        },
+        {
+          "text": "You get distracted by your phone.",
+          "next_id": 25
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "You quickly finish the easy assignment, feeling motivated. You move on to the next one. What happens?",
+      "options": [
+        {
+          "text": "You get stuck and lose motivation.",
+          "next_id": 26
+        },
+        {
+          "text": "You finish the next assignment with ease.",
+          "next_id": 27
+        },
+        {
+          "text": "You get distracted by social media.",
+          "next_id": 28
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "text": "You start with a medium-difficulty assignment, gradually warming up. You finish it and feel ready for more. What do you do next?",
+      "options": [
+        {
+          "text": "Start on the hardest assignment.",
+          "next_id": 29
+        },
+        {
+          "text": "Start on the easiest assignment.",
+          "next_id": 30
+        },
+        {
+          "text": "Take a short break to reward yourself.",
+          "next_id": 31
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "text": "You struggle for a while, but eventually give up on the assignment. Feeling defeated, you decide to call it a night. **The End**",
+      "options": []
+    },
+    {
+      "id": 12,
+      "text": "You're on a roll! You finish the rest of your homework quickly and efficiently. You feel accomplished and ready to relax. **The End**",
+      "options": []
+    },
+    {
+      "id": 13,
+      
+        "text": "You waste too much time on social media and realize you don't have enough time to finish your homework. Feeling stressed, you rush through the rest of your assignments, making careless mistakes. **The End**",
+        "options": []
+      
+    },
+    {
+      "id": 14,
+      "text": "You're feeling productive and accomplished. You decide to reward yourself with a well-deserved break. **The End**",
+      "options": []
+    },
+    {
+      "id": 15,
+      "text": "You lose track of time and end up staying up late to finish your homework. You're exhausted and regret not staying focused earlier. **The End**",
+      "options": []
+    },
+    {
+      "id": 16,
+      "text": "You feel overwhelmed and give up on your homework. You spend the rest of the night feeling guilty and unproductive. **The End**",
+      "options": []
+    },
+    {
+      "id": 17,
+      "text": "You tackle the next assignment with confidence and finish it quickly. You're feeling productive and accomplished. **The End**",
+      "options": []
+    },
+    {
+      "id": 18,
+      "text": "You take a short break to reward yourself. Feeling refreshed, you return to your homework and finish it with ease. **The End**",
+      "options": []
+    },
+    {
+      "id": 19,
+      "text": "You waste too much time watching TV and realize you don't have enough time to finish your homework. You rush through the rest of your assignments, making careless mistakes. **The End**",
+      "options": []
+    },
+    {
+      "id": 20,
+      "text": "You finish the rest of your homework with ease, feeling accomplished and ready to relax. **The End**",
+      "options": []
+    },
+    {
+      "id": 21,
+      "text": "You take a long break and reward yourself. Feeling refreshed, you return to your homework and finish it with ease. **The End**",
+      "options": []
+    }
+]

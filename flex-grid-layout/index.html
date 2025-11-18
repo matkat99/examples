@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout with flex and grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="red">
+      <div class="logo"></div>
+      <ul>
+        <li><a href="#">One two</a></li>
+        <li><a href="#">One two</a></li>
+        <li><a href="#">One tow</a></li>
+        <li><a href="#">One tow</a></li>
+      </ul>
+    </header>
+    <main>
+      <div class="green">
+        <picture>
+          <source
+            media="(max-width: 499px)"
+            srcset="https://placehold.co/300x400"
+            sizes="300px"
+          />
+          <source
+            media="(min-width: 500px)"
+            srcset="https://placehold.co/800x200"
+            sizes="800px"
+          />
+          <img src="https://placehold.co/800x200" alt="Placeholder Image" />
+        </picture>
+        <button>Click Me!</button>
+      </div>
+      <section class="media-boxes">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </section>
+    </main>
+    <footer class="blue">Footer stuff here</footer>
+  </body>
+</html>
